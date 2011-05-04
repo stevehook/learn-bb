@@ -3,6 +3,7 @@ $(function() {
   });
 
   window.ResourceList = Backbone.Collection.extend({
+    url: 'data/index.json'
   });
 
   window.resources = new ResourceList;
@@ -16,6 +17,7 @@ $(function() {
 
     initialize: function() {
       resources.fetch();
+      console.log(resources);
     },
 
     loadResource: function(e) {

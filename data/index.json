@@ -1,5 +1,4 @@
-{
-  "files": [ {
+[ {
       "name": "First File",
       "url": "data/first.json"
     }, {
@@ -10,4 +9,3 @@
       "url": "data/third.json"
     }
   ]
-}
