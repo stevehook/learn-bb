@@ -1,2 +1,17 @@
 body {
+  margin: 0px;
+}
+
+.leftSide {
+  width: 40%;
+  float: left;
+  min-height: 100px;
+}
+
+.rightSide {
+  right-margin: 200px;
+  width: 60%;
+  min-height: 100px;
+  float: right;
+  background-color: #ddd;
 }
