@@ -1,0 +1,13 @@
+{
+  "files": [ {
+      "name": "First File",
+      "url": "data/first.json"
+    }, {
+      "name": "Second File",
+      "url": "data/second.json"
+    }, {
+      "name": "Third File",
+      "url": "data/third.json"
+    }
+  ]
+}
