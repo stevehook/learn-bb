@@ -11,13 +11,8 @@ $(function() {
   window.AppView = Backbone.View.extend({
     el: $('#app'),
 
-    routes: {
-      "data/:fileName": "loadResource"
-    },
-
     initialize: function() {
       _.bindAll(this, 'addResource', 'refreshResources', 'loadResource');
-      this.bind('route:loadResource', this.loadResource);
       resources.bind('add', this.addResource);
       resources.bind('refresh', this.refreshResources);
       resources.fetch();
@@ -40,5 +35,22 @@ $(function() {
     }
   });
 
+  window.AppController = Backbone.Controller.extend({
+    routes: {
+      "data/:fileName.json": "loadResource"
+    },
+
+    initialize: function() {
+      // this.bind('route:loadResource', this.loadResource);
+    },
+
+    loadResource: function(fileName) {
+      console.log('Controller:loadResource');
+      app.loadResource(fileName);
+    }
+  });
+
   window.app = new AppView;
+  window.appController = new AppController;
+  Backbone.history.start()
 });
