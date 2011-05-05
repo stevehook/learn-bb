@@ -1,5 +1,8 @@
 $(function() {
   window.Resource = Backbone.Model.extend({
+    url: function() {
+      this.get('url');
+    }
   });
 
   window.ResourceList = Backbone.Collection.extend({
@@ -18,11 +21,6 @@ $(function() {
       resources.fetch();
     },
 
-    loadResource: function(fileName) {
-      // TODO: Navigate to the new url (as a hashbang)
-      console.log(fileName);
-    },
-
     addResource: function(resource) {
       console.log('addResource');
       // TODO: Refactor this to a template or different view
@@ -35,18 +33,33 @@ $(function() {
     }
   });
 
+  window.ResourceView = Backbone.View.extend({
+    initialize: function(resource) {
+      _.bindAll(this, 'refreshResource');
+      this.resource = resource;
+      resource.bind('change', this.refreshResource);
+    },
+
+    refreshResource: function() {
+      console.log('refreshResource');
+      $('#doc').html(this.resource.get('data'));
+    }
+  });
+
   window.AppController = Backbone.Controller.extend({
     routes: {
       "data/:fileName.json": "loadResource"
     },
 
     initialize: function() {
-      // this.bind('route:loadResource', this.loadResource);
     },
 
     loadResource: function(fileName) {
-      console.log('Controller:loadResource');
-      app.loadResource(fileName);
+      // TODO: Create a new ResourceView and load the Resource model based on the URL
+      var resource = new Resource();
+      resource.url = 'data/' + fileName + '.json';
+      var view = new ResourceView(resource);
+      resource.fetch();
     }
   });
 
