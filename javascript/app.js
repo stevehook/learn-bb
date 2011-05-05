@@ -11,25 +11,27 @@ $(function() {
   window.AppView = Backbone.View.extend({
     el: $('#app'),
 
-    events: {
-      "click .resourceLink": "loadResource"
+    routes: {
+      "data/:fileName": "loadResource"
     },
 
     initialize: function() {
       _.bindAll(this, 'addResource', 'refreshResources', 'loadResource');
+      this.bind('route:loadResource', this.loadResource);
       resources.bind('add', this.addResource);
       resources.bind('refresh', this.refreshResources);
       resources.fetch();
     },
 
-    loadResource: function(e) {
-      console.log('loadResource');
+    loadResource: function(fileName) {
+      // TODO: Navigate to the new url (as a hashbang)
+      console.log(fileName);
     },
 
     addResource: function(resource) {
       console.log('addResource');
       // TODO: Refactor this to a template or different view
-      var html = '<li>' + resource.get('name') + '</li>';
+      var html = "<li class='resourceLink'><a href='#" + resource.get('url') + "'>" + resource.get('name') + "</a></li>";
       this.$("#resourceList").append(html);
     },
 
