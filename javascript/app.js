@@ -26,9 +26,11 @@ $(function() {
       console.log('loadResource');
     },
 
-    addResource: function() {
+    addResource: function(resource) {
       console.log('addResource');
-      // TODO: Insert a row into the list of resources in the leftSide panel
+      // TODO: Refactor this to a template or different view
+      var html = '<li>' + resource.get('name') + '</li>';
+      this.$("#resourceList").append(html);
     },
 
     refreshResources: function() {
