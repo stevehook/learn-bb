@@ -1,4 +1,9 @@
 var jasmine = require('jasmine-node');
+require('../lib/jquery-1.4.2.js');
+require('../lib/json2.js');
+require('../lib/underscore-1.1.3.js');
+require('../lib/backbone.js');
+require('../lib/app.js');
 
 describe("Resource model", function() {
   
