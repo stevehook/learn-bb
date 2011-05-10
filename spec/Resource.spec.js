@@ -1,9 +1,24 @@
 var jasmine = require('jasmine-node');
-require('../lib/jquery-1.4.2.js');
-require('../lib/json2.js');
-require('../lib/underscore-1.1.3.js');
-require('../lib/backbone.js');
-require('../lib/app.js');
+var jsdom = require('jsdom');
+var window = jsdom.createWindow();
+
+jsdom.env('<html></html>', [
+    '../lib/jquery-1.4.2.js',
+    '../lib/json2.js',
+    '../lib/underscore-1.1.3.js',
+    '../lib/backbone.js',
+    '../lib/app.js'
+  ], function(_errors, _window) {
+    console.log('callback from jsdom.env');
+    window = _window;
+    errors = _errors;
+  });
+
+// require('../lib/jquery-1.4.2.js');
+// require('../lib/json2.js');
+// require('../lib/underscore-1.1.3.js');
+// require('../lib/backbone.js');
+// require('../lib/app.js');
 
 describe("Resource model", function() {
   
