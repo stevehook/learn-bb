@@ -1,6 +1,4 @@
-// var jasmine = require('jasmine-node');
-
-// // Bootstrap jsdom (from jsdom-hooks.js')
+// Bootstrap jsdom (from jsdom-hooks.js')
 if (!global.window) {
   var jsdom = require('jsdom').jsdom;
   var w = jsdom('<html><head></head><body></body></html>').createWindow();
