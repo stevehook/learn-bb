@@ -13,7 +13,8 @@ if (!global.window) {
   global['Backbone'] = require('../lib/backbone.js');
 }
 
-require('../lib/app.js');
+require('../lib/models/resource.js');
+require('../lib/collections/resourceList.js');
 
 describe("Resource model", function() {
  
