@@ -21,7 +21,11 @@ body {
   right-margin: 200px;
   width: 700px;
   float: right;
+}
+
+#docContent {
   background-color: #e8e8e8;
+  margin: 5px 5px 0 0;
 }
 
 ul#resourceList {
@@ -36,4 +40,8 @@ ul#resourceList li {
 .title {
   font-size: 120%;
   font-weight: bold;
+}
+
+#resourceListTitle {
+  margin: 0 5px;
 }
