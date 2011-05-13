@@ -17,9 +17,11 @@ require('../lib/models/resource.js');
 require('../lib/collections/resourceList.js');
 
 describe("Resource model", function() {
- 
+
   beforeEach(function() {
     this.resource = new window.Resource({
+      name: 'Document 1',
+      content: 'bla blah',
       url:'test/url'
     });
     var collection = {
@@ -29,9 +31,38 @@ describe("Resource model", function() {
 
   describe("when instantiated", function() {
 
-    it("should set the resource property", function() {
+    it("should set the name property", function() {
+      expect(this.resource.get("name")).toEqual('Document 1');
+    });
+
+    it("should set the content property", function() {
+      expect(this.resource.get("content")).toEqual('bla blah');
+    });
+
+    it("should set the url property", function() {
       expect(this.resource.get("url")).toEqual('test/url');
-      console.log('In test');
+    });
+
+  });
+
+});
+
+describe("Resource model", function() {
+
+  beforeEach(function() {
+    this.resource = new window.Resource;
+    var collection = {};
+    this.resource.collection = collection;
+  });
+
+  describe("when instantiated with defaults", function() {
+
+    it("should set the name property", function() {
+      expect(this.resource.get("name")).toEqual('New Document');
+    });
+
+    it("should set the content property", function() {
+      expect(this.resource.get("content")).toEqual('');
     });
 
   });
