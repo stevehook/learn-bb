@@ -1,11 +1,11 @@
 body {
   margin: 0px;
   font-family: Calibri, Arial;
-  background-color: #eee;
+  background-color: #e8e8e8;
 }
 
 #container {
-  width: 900px;
+  max-width: 960px;
   /* height: auto;*/
   margin: 0px auto 0px;
   background-color: #fff;
@@ -13,18 +13,18 @@ body {
 }
 
 .leftSide {
-  width: 20%;
+  width: 200px;
   float: left;
 }
 
 .rightSide {
   right-margin: 200px;
-  width: 700px;
+  width: 740px;
   float: right;
 }
 
 #docContent {
-  background-color: #e8e8e8;
+  background-color: #eee;
   margin: 5px 5px 0 0;
 }
 
