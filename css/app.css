@@ -32,3 +32,8 @@ ul#resourceList {
 ul#resourceList li {
   list-style: none;
 }
+
+.title {
+  font-size: 120%;
+  font-weight: bold;
+}
