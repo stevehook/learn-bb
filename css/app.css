@@ -1,18 +1,27 @@
 body {
   margin: 0px;
   font-family: Calibri, Arial;
+  background-color: #eee;
+}
+
+#container {
+  width: 900px;
+  /* height: auto;*/
+  margin: 0px auto 0px;
+  background-color: #fff;
+  padding: 5px;
 }
 
 .leftSide {
-  width: 30%;
+  width: 20%;
   float: left;
 }
 
 .rightSide {
   right-margin: 200px;
-  width: 70%;
+  width: 700px;
   float: right;
-  background-color: #eee;
+  background-color: #e8e8e8;
 }
 
 ul#resourceList {
