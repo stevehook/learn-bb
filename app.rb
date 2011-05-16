@@ -1,4 +1,4 @@
-require 'requires'
+require 'app/requires'
 
 class App < Sinatra::Base
   set :static, true
@@ -7,4 +7,6 @@ class App < Sinatra::Base
   get '/' do
     haml :index
   end
+
+  run! if /app.rb$/ =~ $0
 end
