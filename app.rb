@@ -17,13 +17,13 @@ class App < Sinatra::Base
   get '/resources' do
     '[ {
           "name": "First File",
-          "url": "data/first.json"
+          "url": "resources/first"
         }, {
           "name": "Second File",
-          "url": "data/second.json"
+          "url": "resources/second"
         }, {
           "name": "Third File",
-          "url": "data/third.json"
+          "url": "resources/third"
         }
       ]'
   end
@@ -31,6 +31,7 @@ class App < Sinatra::Base
   get '/resources/:name' do
     '{
       "name": "First",
+      "url": "resources/first",
       "data": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
     }'
   end
