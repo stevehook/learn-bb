@@ -2,7 +2,7 @@ require 'app/requires'
 
 class App < Sinatra::Base
   set :static, true
-  set :public, 'public'
+  set :public, '.'
 
   helpers do
     def partial(page, options={})
