@@ -4,6 +4,6 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'haml'
 require 'json'
-require 'app/resource'
-require 'app/resource_store'
+require './app/resource'
+require './app/resource_store'
 

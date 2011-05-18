@@ -1,4 +1,4 @@
-require 'app/requires'
+require './app/requires'
 
 class App < Sinatra::Base
   set :static, true
