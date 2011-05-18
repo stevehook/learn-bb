@@ -20,6 +20,7 @@ describe("Resource model", function() {
 
   beforeEach(function() {
     this.resource = new window.Resource({
+      id: 37,
       name: 'Document 1',
       data: 'bla blah',
       url:'test/url'
@@ -30,6 +31,10 @@ describe("Resource model", function() {
   });
 
   describe("when instantiated", function() {
+
+    it("should set the id property", function() {
+      expect(this.resource.get("id")).toEqual(37);
+    });
 
     it("should set the name property", function() {
       expect(this.resource.get("name")).toEqual('Document 1');
