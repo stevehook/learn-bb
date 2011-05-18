@@ -19,9 +19,9 @@ class App < Sinatra::Base
     return resources.collect { |resource| resource.to_summary_hash }.to_json
   end
 
-  get '/resources/:name' do
+  get '/resources/:id' do
     content_type :json
-    resource = ResourceStore.find(params[:name].to_sym)
+    resource = ResourceStore.find(params[:id].to_i)
     resource ? resource.to_json_detail : ''
   end
 

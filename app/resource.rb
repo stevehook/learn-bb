@@ -1,20 +1,21 @@
 class Resource
-  def initialize(name, data)
+  def initialize(id, name, data)
+    self.id = id
     self.name = name
     self.data = data
   end
 
   def url
-    "resources/#{self.name}"
+    "resources/#{self.id}"
   end
 
   def to_summary_hash
-    { :name => self.name, :url => self.url }
+    { :id => self.id, :name => self.name, :url => self.url }
   end
 
   def to_json_detail
-    { :name => self.name, :url => self.url, :data => self.data }.to_json
+    { :id => self.id, :name => self.name, :url => self.url, :data => self.data }.to_json
   end
 
-  attr_accessor :name, :data
+  attr_accessor :id, :name, :data
 end
