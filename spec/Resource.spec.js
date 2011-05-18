@@ -21,7 +21,7 @@ describe("Resource model", function() {
   beforeEach(function() {
     this.resource = new window.Resource({
       name: 'Document 1',
-      content: 'bla blah',
+      data: 'bla blah',
       url:'test/url'
     });
     var collection = {
@@ -35,8 +35,8 @@ describe("Resource model", function() {
       expect(this.resource.get("name")).toEqual('Document 1');
     });
 
-    it("should set the content property", function() {
-      expect(this.resource.get("content")).toEqual('bla blah');
+    it("should set the data property", function() {
+      expect(this.resource.get("data")).toEqual('bla blah');
     });
 
     it("should set the url property", function() {
@@ -61,8 +61,8 @@ describe("Resource model", function() {
       expect(this.resource.get("name")).toEqual('New Document');
     });
 
-    it("should set the content property", function() {
-      expect(this.resource.get("content")).toEqual('');
+    it("should set the data property", function() {
+      expect(this.resource.get("data")).toEqual('');
     });
 
   });
