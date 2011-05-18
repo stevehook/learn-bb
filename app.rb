@@ -15,25 +15,14 @@ class App < Sinatra::Base
   end
 
   get '/resources' do
-    '[ {
-          "name": "First File",
-          "url": "resources/first"
-        }, {
-          "name": "Second File",
-          "url": "resources/second"
-        }, {
-          "name": "Third File",
-          "url": "resources/third"
-        }
-      ]'
+    resources = ResourceStore.find_all
+    return resources.collect { |resource| resource.to_summary_hash }.to_json
   end
 
   get '/resources/:name' do
-    '{
-      "name": "First",
-      "url": "resources/first",
-      "data": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-    }'
+    content_type :json
+    resource = ResourceStore.find(params[:name].to_sym)
+    resource ? resource.to_json_detail : ''
   end
 
   run! if /app.rb$/ =~ $0
