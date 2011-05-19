@@ -33,6 +33,10 @@ ul#resourceList {
   padding: 0px;
 }
 
+#newResource {
+  margin: 5px;
+}
+
 ul#resourceList li {
   list-style: none;
 }
