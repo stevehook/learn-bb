@@ -25,5 +25,18 @@ class App < Sinatra::Base
     resource ? resource.to_json_detail : ''
   end
 
+  put '/resources/:id' do
+    post_data = JSON.parse request.body.string
+    resource = ResourceStore.find(params[:id].to_i)
+    if resource
+      post_data.each do |key, value|
+        if resource.respond_to?("#{key}=") && key != 'id'
+          resource.send("#{key}=", value)
+        end
+      end
+    end
+    resource ? resource.to_json_detail : ''
+  end
+
   run! if /app.rb$/ =~ $0
 end
