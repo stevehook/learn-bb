@@ -13,5 +13,13 @@ class ResourceStore
     def find(id)
       @@resources[id]
     end
+
+    def next_id
+      @@resources.values.max{ |r1, r2| r1.id <=> r2.id }.id + 1
+    end
+
+    def add(new_resource)
+      @@resources[new_resource.id] = new_resource
+    end
   end
 end

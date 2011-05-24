@@ -19,6 +19,13 @@ class App < Sinatra::Base
     return resources.collect { |resource| resource.to_summary_hash }.to_json
   end
 
+  post '/resources/create' do
+    post_data = JSON.parse request.body.string
+    resource = Resource.new(ResourceStore.next_id, post_data['name'], post_data['data'])
+    ResourceStore.add(resource)
+    resource
+  end
+
   get '/resources/:id' do
     content_type :json
     resource = ResourceStore.find(params[:id].to_i)
