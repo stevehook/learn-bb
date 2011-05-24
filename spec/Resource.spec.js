@@ -56,6 +56,10 @@ describe("Resource model", function() {
       expect(this.resource.get("data")).toEqual('');
     });
 
+    it("should be new", function() {
+      expect(this.resource.isNew()).toEqual(true);
+    });
+
   });
 
 });
