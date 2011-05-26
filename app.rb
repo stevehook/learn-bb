@@ -19,11 +19,11 @@ class App < Sinatra::Base
     return resources.collect { |resource| resource.to_summary_hash }.to_json
   end
 
-  post '/resources/create' do
+  post '/resources' do
     post_data = JSON.parse request.body.string
     resource = Resource.new(ResourceStore.next_id, post_data['name'], post_data['data'])
     ResourceStore.add(resource)
-    resource
+    resource ? resource.to_json_detail : ''
   end
 
   get '/resources/:id' do

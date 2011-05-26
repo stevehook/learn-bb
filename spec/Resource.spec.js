@@ -8,8 +8,7 @@ describe("Resource model", function() {
     this.resource = new window.Resource({
       id: 37,
       name: 'Document 1',
-      data: 'bla blah',
-      url:'test/url'
+      data: 'bla blah'
     });
     var collection = {
     };
@@ -30,10 +29,9 @@ describe("Resource model", function() {
       expect(this.resource.get("data")).toEqual('bla blah');
     });
 
-    it("should set the url property", function() {
-      expect(this.resource.get("url")).toEqual('test/url');
+    it("the url function should return the correct address", function() {
+      expect(this.resource.url()).toEqual('/resources/37');
     });
-
   });
 
 });
@@ -60,6 +58,9 @@ describe("Resource model", function() {
       expect(this.resource.isNew()).toEqual(true);
     });
 
+    it("the url function should return the correct address", function() {
+      expect(this.resource.url()).toEqual('/resources');
+    });
   });
 
 });
