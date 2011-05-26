@@ -30,7 +30,7 @@ describe("Resource model", function() {
     });
 
     it("the url function should return the correct address", function() {
-      expect(this.resource.url()).toEqual('/resources/37');
+      expect(this.resource.url()).toEqual('resources/37');
     });
   });
 
@@ -59,7 +59,7 @@ describe("Resource model", function() {
     });
 
     it("the url function should return the correct address", function() {
-      expect(this.resource.url()).toEqual('/resources');
+      expect(this.resource.url()).toEqual('resources');
     });
   });
 
