@@ -47,7 +47,7 @@ describe("Resource model", function() {
   describe("when instantiated with defaults", function() {
 
     it("should set the name property", function() {
-      expect(this.resource.get("name")).toEqual('New Document');
+      expect(this.resource.get("name")).toEqual('');
     });
 
     it("should set the data property", function() {
