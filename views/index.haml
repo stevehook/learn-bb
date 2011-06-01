@@ -15,6 +15,9 @@
   %body
     %script#resourceTemplate{ :type => 'text/template' }
       :plain
+        <li class='resourceLink'><a href='#<%= url %>'><%= name %></a></li>
+    %script#resourceDetailTemplate{ :type => 'text/template' }
+      :plain
         <div id='docTitle' class='title' contenteditable='true'><%= name %></div>"
         <div id='docContent' contenteditable='true'><%= data %></div>"
     %div#container
