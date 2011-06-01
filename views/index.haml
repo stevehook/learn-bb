@@ -12,14 +12,14 @@
     %script{ :src => '/lib/views/resourceView.js', :type => 'text/javascript' }
     %script{ :src => '/lib/controllers/appController.js', :type => 'text/javascript' }
     %script{ :src => '/lib/app.js', :type => 'text/javascript' }
-  %body
     %script#resourceTemplate{ :type => 'text/template' }
       :plain
         <li class='resourceLink'><a href='#<%= url %>'><%= name %></a></li>
     %script#resourceDetailTemplate{ :type => 'text/template' }
       :plain
-        <div id='docTitle' class='title' contenteditable='true'><%= name %></div>"
-        <div id='docContent' contenteditable='true'><%= data %></div>"
+        <div id='docTitle' class='title' contenteditable='true'><%= name %></div>
+        <div id='docContent' contenteditable='true'><%= data %></div>
+  %body
     %div#container
       %div#app.leftSide
         %div#resourceListTitle.title Documents
@@ -27,4 +27,4 @@
         %div
           %a#newResource{ :href => '#resources/new' } New...
       %div#doc.rightSide
-        %div#footer{ :style => 'clear: both; height: 10px;' }
+      %div#footer{ :style => 'clear: both; height: 10px;' }
