@@ -39,6 +39,11 @@ ul#resourceList {
 
 ul#resourceList li {
   list-style: none;
+  border-bottom: solid 1px #eee;
+}
+
+ul#resourceList li a {
+  text-decoration: none;
 }
 
 .title {
