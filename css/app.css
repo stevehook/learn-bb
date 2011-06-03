@@ -54,7 +54,7 @@ ul#resourceList li:hover a.delete {
   margin-top: 3px;
 }
 
-ul#resourceList li:hover a.delete:hover {
+ul#resourceList li a.delete:hover {
   background: url(icons.png) no-repeat -12px 0;
 }
 
