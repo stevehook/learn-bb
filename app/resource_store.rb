@@ -21,5 +21,9 @@ class ResourceStore
     def add(new_resource)
       @@resources[new_resource.id] = new_resource
     end
+
+    def destroy(id)
+      @@resources.delete(id)
+    end
   end
 end

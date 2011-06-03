@@ -15,8 +15,7 @@ class App < Sinatra::Base
   end
 
   get '/resources' do
-    resources = ResourceStore.find_all
-    return resources.collect { |resource| resource.to_summary_hash }.to_json
+    return ResourceStore.find_all.collect { |resource| resource.to_summary_hash }.to_json
   end
 
   post '/resources' do
@@ -30,6 +29,12 @@ class App < Sinatra::Base
     content_type :json
     resource = ResourceStore.find(params[:id].to_i)
     resource ? resource.to_json_detail : ''
+  end
+
+  delete '/resources/:id' do
+    content_type :json
+    ResourceStore.destroy(params[:id].to_i)
+    return ResourceStore.find_all.collect { |resource| resource.to_summary_hash }.to_json
   end
 
   put '/resources/:id' do
