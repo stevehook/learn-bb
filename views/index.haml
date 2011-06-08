@@ -17,8 +17,8 @@
         <li class='resourceLink'><a href='#<%= url %>'><%= name %></a><a class='delete' href='#<%= url + '/delete' %>'></a></li>
     %script#resourceDetailTemplate{ :type => 'text/template' }
       :plain
-        <div id='docTitle' class='title' contenteditable='true'><%= name %></div>
-        <div id='docContent' contenteditable='true'><%= data %></div>
+        <div id='docTitle' class='title' tabindex='1' contenteditable='true'><%= name %></div>
+        <div id='docContent' tabindex='2' contenteditable='true'><%= data %></div>
   %body
     %div#container
       %div#app.leftSide
