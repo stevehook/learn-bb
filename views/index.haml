@@ -17,6 +17,7 @@
         <li class='resourceLink' id='<%= id %>'><a href='#<%= url %>'><%= name %></a><a class='delete' href='#<%= url + '/delete' %>'></a></li>
     %script#resourceDetailTemplate{ :type => 'text/template' }
       :plain
+        <input id='docID' type='hidden' value='<%= id %>'></input>
         <div id='docTitle' class='title' tabindex='1' contenteditable='true'><%= name %></div>
         <div id='docContent' tabindex='2' contenteditable='true'><%= data %></div>
   %body
