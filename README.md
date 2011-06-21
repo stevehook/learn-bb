@@ -1,10 +1,12 @@
+##Summary
+
 This is a learning project to get to understand backbone.js. 
 
 I created a very simple application, in the spirit of the TODO list
 backbone.js sample app. It consists of a single-page Web app and a
 Sinatra back-end. All it does is store and retrieve 'documents' from the
 server. The 'database' is just an in-memory list so when you restart the
-server all your work will be lost, and replaced with the 3 sample
+server all your work will be lost, and replaced with 3 seed
 documents that the database is primed with.
 
 ##Instructions
