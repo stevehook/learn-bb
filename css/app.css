@@ -10,6 +10,9 @@ body {
   margin: 0px auto 0px;
   background-color: #fff;
   padding: 5px;
+  -moz-box-shadow: 0 0 5px 5px #AAA;
+  -webkit-box-shadow: 0 0 5px 5px #AAA;
+  box-shadow: 0 0 5px 5px #AAA;
 }
 
 .leftSide {
