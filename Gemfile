@@ -4,4 +4,5 @@ gem "rack", "~> 1.2"
 gem "active_support", ">= 3.0"
 gem "haml", ">= 3.1"
 gem "json", ">= 1.5"
+gem "sinatra", ">= 1.2.6"
 
