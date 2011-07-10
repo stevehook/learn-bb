@@ -1,0 +1,7 @@
+source "http://rubygems.org"
+gem "nokogiri"
+gem "rack", "~> 1.2"
+gem "active_support", ">= 3.0"
+gem "haml", ">= 3.1"
+gem "json", ">= 1.5"
+
