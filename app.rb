@@ -2,7 +2,8 @@ require './app/requires'
 
 class App < Sinatra::Base
   set :static, true
-  set :public, '.'
+  set :root, File.dirname(__FILE__)
+  set :public, 'public'
 
   helpers do
     def partial(page, options={})
